@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Arrays;
 
 @Entity
 public class Coffee {
@@ -12,7 +13,7 @@ public class Coffee {
     private String name;
     private String link;
     private String company;
-    private Byte[] image;
+    private String imageLink;
     private String roasting;
     private String description;
     private Integer weight1;
@@ -23,6 +24,24 @@ public class Coffee {
     private String region;
     private Float qGrade;
     public Coffee() {
+    }
+
+    public Coffee(String name, String link, String company, String imageLink,
+                  String roasting, String description, Integer weight1, Integer price1,
+                  Integer weight2, Integer price2, String processing, String region, Float qGrade) {
+        this.name = name;
+        this.link = link;
+        this.company = company;
+        this.imageLink = imageLink;
+        this.roasting = roasting;
+        this.description = description;
+        this.weight1 = weight1;
+        this.price1 = price1;
+        this.weight2 = weight2;
+        this.price2 = price2;
+        this.processing = processing;
+        this.region = region;
+        this.qGrade = qGrade;
     }
 
     public Long getId() {
@@ -57,12 +76,12 @@ public class Coffee {
         this.company = company;
     }
 
-    public Byte[] getImage() {
-        return image;
+    public String getImageLink() {
+        return imageLink;
     }
 
-    public void setImage(Byte[] image) {
-        this.image = image;
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
     }
 
     public String getRoasting() {
@@ -135,5 +154,25 @@ public class Coffee {
 
     public void setqGrade(Float qGrade) {
         this.qGrade = qGrade;
+    }
+
+    @Override
+    public String toString() {
+        return "Coffee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", link='" + link + '\'' +
+                ", company='" + company + '\'' +
+                ", imageLink=" + imageLink +
+                ", roasting='" + roasting + '\'' +
+                ", description='" + description + '\'' +
+                ", weight1=" + weight1 +
+                ", price1=" + price1 +
+                ", weight2=" + weight2 +
+                ", price2=" + price2 +
+                ", processing='" + processing + '\'' +
+                ", region='" + region + '\'' +
+                ", qGrade=" + qGrade +
+                '}';
     }
 }

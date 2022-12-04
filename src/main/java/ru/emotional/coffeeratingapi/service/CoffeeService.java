@@ -12,10 +12,17 @@ import java.util.Optional;
 public class CoffeeService {
     @Autowired
     private CoffeeRepo coffeeRepo;
+
     public List<Coffee> findAll() {
         return coffeeRepo.findAll();
     }
+
     public Optional<Coffee> findById(Long id) {
         return coffeeRepo.findById(id);
     }
+
+    public void saveAll(List<Coffee> coffees){
+        coffeeRepo.saveAll(coffees);
+    }
+    public void save(Coffee coffee){coffeeRepo.save(coffee);}
 }
